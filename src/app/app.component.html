@@ -1,6 +1,48 @@
-<ul>
-  <li><a routerLink="/">Propelrr Home</a></li>
-  <li><a routerLink="about">Avaitors</a></li>
-</ul>
+<!--The whole content below can be removed with the new code.-->
+<div id="main-wrapper">
+   <h1>{{title}}</h1>
+   <div *ngIf="selectedHero">
+      
+      <h2>{{selectedHero.name}} details!</h2>
+      <div><label>id: </label>{{selectedHero.id}}</div>
+      <div><label>location: </label>{{selectedHero.location}}</div>
+   </div>
 
-<router-outlet></router-outlet>
+
+   <div class="input-wrap">
+      <div><label>name: </label>{{hero.name}}</div>
+      <label>name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name">
+   </div>
+
+   <hr>
+
+   <h2>My Heroes asd asdasd</h2>
+   <ul class="heroes">
+      <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+         <p><span class="badge">{{hero.id}}</span> <span>{{hero.name}}</span>  <span>{{hero.location}}</span></p>
+      </li>
+   </ul>
+
+   <h1 class="title" style="display:none">
+    {{title}}
+    </h1>
+
+    <div class="swipe-wrapper" >
+        <div class="flex-wrap" id="slide-container">
+            <div id="scroller" iscroll="{mouseWheel: true, momentum: true, refreshInterval: 500}">
+                <div class="box-wrap"></div>
+                <div class="box-wrap"></div>
+                <div class="box-wrap"></div>
+                <div class="box-wrap"></div>
+                <div class="box-wrap"></div>
+                <div class="box-wrap"></div>
+            </div>
+        </div>
+    </div>
+
+   <button (click)="toggleTitle()"> clickhere</button>
+</div>
+
+
+

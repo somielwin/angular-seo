@@ -1,14 +1,14 @@
-import { Ang4SeoPage } from './app.po';
+import { MyAppPage } from './app.po';
 
-describe('ang4-seo App', () => {
-  let page: Ang4SeoPage;
+describe('my-app App', () => {
+  let page: MyAppPage;
 
   beforeEach(() => {
-    page = new Ang4SeoPage();
+    page = new MyAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });
